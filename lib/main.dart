@@ -36,7 +36,6 @@ class _MyAppState extends State<MyApp> {
           children: [
             HomeScreen(),
             AlberguesScreen(),
-            LoginScreen(),
           ],
         ),
         bottomNavigationBar: Container(
