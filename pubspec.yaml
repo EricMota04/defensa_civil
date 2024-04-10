@@ -19,10 +19,12 @@ dependencies:
   flutter:
     sdk: flutter
 
-
+  # Animate Do
+  animate_do: ^3.3.4
   # Icon Dependencies
   font_awesome_flutter: ^10.7.0
   cupertino_icons: ^1.0.6
+
 
 dev_dependencies:
   flutter_test:
@@ -45,7 +47,16 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+  assets:
+    - assets/
+  fonts:
+    - family: SanFrancisco
+      fonts:
+        - asset: fonts/SF-Pro.ttf
+        - asset: fonts/SF-Pro-Text-Bold.otf
+        - asset: fonts/SF-Pro-Text-Regular.otf
+        - asset: fonts/SF-Pro-Text-Semibold.otf
+          weight: 700
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
