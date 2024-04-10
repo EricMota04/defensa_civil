@@ -1,9 +1,10 @@
 import 'package:defensa_civil/pages/albergues_screen.dart';
 import 'package:defensa_civil/pages/home_screen.dart';
 import 'package:defensa_civil/presentation/widgets/AppBar/defensa_appbar.dart';
+import 'package:defensa_civil/pages/login_screen.dart';
 import 'package:flutter/material.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
@@ -26,6 +27,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'SanFrancisco'),
       home: Scaffold(
         appBar: DefensaAppBar(context: context),
@@ -33,7 +35,8 @@ class _MyAppState extends State<MyApp> {
           index: _currentIndex,
           children: [
             HomeScreen(),
-            AlberguesScreen()
+            AlberguesScreen(),
+            LoginScreen(),
           ],
         ),
         bottomNavigationBar: Container(

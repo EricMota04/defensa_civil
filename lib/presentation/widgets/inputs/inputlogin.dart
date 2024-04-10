@@ -12,7 +12,6 @@ class InputLogin extends StatefulWidget {
   final String? description;
   final dynamic inputHintColor;
   final dynamic inputFocusColor;
-  final dynamic descriptionColor;
   final TextEditingController controller;
 
   const InputLogin({
@@ -25,7 +24,6 @@ class InputLogin extends StatefulWidget {
     this.description,
     this.inputHintColor,
     this.inputFocusColor,
-    this.descriptionColor,
     required this.controller,
   });
 
@@ -53,6 +51,9 @@ class InputLoginDesign extends State<InputLogin> {
       controller: widget.controller,
       keyboardType: widget.mode,
       obscureText: suffixIconSummon ? true : false,
+      style: const TextStyle(
+        color: Color.fromRGBO(239, 121, 42, 1),
+      ),
       decoration: InputDecoration(
         prefixIcon: Icon(
           widget.inputIcon ?? FontAwesomeIcons.solidUser,
