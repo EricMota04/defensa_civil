@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
           ),
           items: [
             slide(imagePath: 'assets/noticia1.jpeg'),
-            slide(imagePath: 'assets/noticia2.jpeg'),
+            slide(imagePath: 'assets/noticia2.jpeg'), //Aquí puedes agregar cuantas imagenes quieres
           ]
         ),
       ),
