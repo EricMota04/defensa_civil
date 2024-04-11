@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // Widgets
 import 'package:defensa_civil/presentation/widgets/inputs/inputlogin.dart';
+import 'package:defensa_civil/presentation/widgets/Buttons/button_orange.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({
@@ -75,6 +76,23 @@ class LoginDesign extends State<LoginScreen> {
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.03,
+                ),
+                ButtonOrange(
+                  title: "Iniciar Sesión",
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.02,
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "¿Aun no eres miembro? Haz clic para registrarte",
+                    style: TextStyle(
+                      color: const Color.fromRGBO(15, 67, 116, 1),
+                      fontWeight: FontWeight.w700,
+                      fontSize: MediaQuery.of(context).size.height * 0.014,
+                    ),
+                  ),
                 ),
               ],
             ),
