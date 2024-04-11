@@ -1,11 +1,8 @@
-import 'package:defensa_civil/presentation/widgets/Home/slide.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:defensa_civil/presentation/widgets/Members/member_slide.dart';
+import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
-
+class MembersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -24,8 +21,18 @@ class HomeScreen extends StatelessWidget {
               viewportFraction: 0.8,
             ),
             items: [
-              slide(imagePath: 'assets/noticia1.jpeg'),
-              slide(imagePath: 'assets/noticia2.jpeg'),
+              MembersSlide(
+                  imagePath: 'assets/juanrosario.jpeg',
+                  name: 'Juan Rosario',
+                  charge: 'Palomo'),
+              MembersSlide(
+                  imagePath: 'assets/imagen3.jpeg',
+                  name: 'Palomo 2',
+                  charge: 'Palomear'),
+              MembersSlide(
+                  imagePath: 'assets/noticia1.jpeg',
+                  name: 'Palomo 3',
+                  charge: 'Ser palomo')
             ]),
       ),
     );
