@@ -1,6 +1,5 @@
 import 'package:defensa_civil/pages/albergues_screen.dart';
 import 'package:defensa_civil/pages/home_screen.dart';
-import 'package:defensa_civil/pages/register_screen.dart';
 import 'package:defensa_civil/presentation/widgets/AppBar/defensa_appbar.dart';
 import 'package:defensa_civil/pages/login_screen.dart';
 import 'package:flutter/material.dart';
@@ -37,9 +36,7 @@ class _MyAppState extends State<MyApp> {
           children: [
             HomeScreen(),
             AlberguesScreen(),
-            //Solo estaba para probar como se veria la pantalla, sustituir por la del login cuando este creada
-            RegisterScreen()
-
+            LoginScreen(),
           ],
         ),
         bottomNavigationBar: Container(
