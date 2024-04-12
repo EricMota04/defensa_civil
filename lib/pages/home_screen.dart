@@ -24,8 +24,8 @@ class HomeScreen extends StatelessWidget {
             viewportFraction: 0.8,
           ),
           items: [
-            slide(imagePath: 'assets/noticia1.jpeg'),
-            slide(imagePath: 'assets/noticia2.jpeg'), //Aquí puedes agregar cuantas imagenes quieres
+            slide(imagePath: 'assets/accion1.jpeg', description: "Defensa Civil recupera los cuerpos de tres personas desaparecidas"),
+            slide(imagePath: 'assets/accion2.jpeg', description: "Director Defensa Civil encabeza búsqueda de tres personas desaparecidas",), //Aquí puedes agregar cuantas imagenes quieres
           ]
         ),
       ),

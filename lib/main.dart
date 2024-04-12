@@ -1,5 +1,6 @@
 import 'package:defensa_civil/pages/albergues_screen.dart';
 import 'package:defensa_civil/pages/home_screen.dart';
+import 'package:defensa_civil/pages/news.dart';
 import 'package:defensa_civil/presentation/widgets/AppBar/defensa_appbar.dart';
 import 'package:flutter/material.dart';
 
@@ -33,8 +34,8 @@ class _MyAppState extends State<MyApp> {
         body: IndexedStack(
           index: _currentIndex,
           children: [
-            HomeScreen(),
-            AlberguesScreen()
+            News(),
+            AlberguesScreen(),
           ],
         ),
         bottomNavigationBar: Container(
