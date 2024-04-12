@@ -1,5 +1,9 @@
 import 'package:defensa_civil/pages/albergues_screen.dart';
 import 'package:defensa_civil/pages/home_screen.dart';
+
+import 'package:defensa_civil/pages/register_screen.dart';
+import 'package:defensa_civil/presentation/widgets/NavigationBar/DefensaNavigationBar.dart';
+
 import 'package:defensa_civil/pages/news.dart';
 
 
@@ -10,6 +14,7 @@ import 'package:defensa_civil/pages/register_screen.dart';
 
 import 'package:defensa_civil/presentation/widgets/AppBar/defensa_appbar.dart';
 import 'package:defensa_civil/pages/login_screen.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -36,43 +41,65 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'SanFrancisco'),
-      home: Scaffold(
-        appBar: DefensaAppBar(context: context),
-        body: IndexedStack(
-          index: _currentIndex,
-          children: [
-            HomeScreen(),
-            AlberguesScreen(),
-            //Solo estaba para probar como se veria la pantalla, sustituir por la del login cuando este creada
-            LoginScreen()
-          ],
+
+      theme: ThemeData(
+        fontFamily: 'SanFrancisco',
+        appBarTheme: AppBarTheme(
+          iconTheme: IconThemeData(color: Color.fromRGBO(239, 121, 42, 1)),
+
         ),
-        bottomNavigationBar: Container(
-          color: Colors.white,
-          child: BottomNavigationBar(
-            currentIndex: _currentIndex,
-            onTap: _onTabTapped,
-            selectedItemColor: Color.fromRGBO(239, 121, 42, 1),
-            unselectedItemColor: Color.fromRGBO(15, 67, 116, 1),
-            selectedLabelStyle: TextStyle(color: Colors.red),
-            unselectedLabelStyle: TextStyle(color: Colors.white),
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined),
-                label: 'Home',
+        drawerTheme: DrawerThemeData(
+          backgroundColor: Color.fromRGBO(220, 220, 220, 1.0),
+        ),
+      ),
+      home: Navigator( // Wrap your Scaffold with Navigator
+        onGenerateRoute: (settings) {
+          return MaterialPageRoute(
+            builder: (context) => Scaffold(
+              body: IndexedStack(
+                index: _currentIndex,
+                children: [
+                  HomeScreen(),
+                  AlberguesScreen(),
+                  RegisterScreen(),
+                ],
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.location_on_outlined),
-                label: 'Albergues',
+              bottomNavigationBar: DefensaNavigationBar(
+                index: _currentIndex,
+                onTabTapped: _onTabTapped,
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.people_alt_outlined),
-                label: 'Login',
-              ),
-            ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+
+
+
+
+class RegisterDrawer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: [
+          ListTile(
+            title: Text('Register Drawer Item 1'),
+            onTap: () {
+              // Handle item tap
+            },
           ),
-        ),
+          ListTile(
+            title: Text('Register Drawer Item 2'),
+            onTap: () {
+              // Handle item tap
+            },
+          ),
+          // Add more items as needed
+        ],
       ),
     );
   }
