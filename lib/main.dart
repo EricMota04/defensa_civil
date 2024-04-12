@@ -1,12 +1,9 @@
 import 'package:defensa_civil/pages/albergues_screen.dart';
 import 'package:defensa_civil/pages/home_screen.dart';
-
-import 'package:defensa_civil/pages/medidas_preventivas.dart';
-import 'package:defensa_civil/pages/members_screen.dart';
 import 'package:defensa_civil/pages/register_screen.dart';
-
 import 'package:defensa_civil/presentation/widgets/AppBar/defensa_appbar.dart';
-import 'package:defensa_civil/pages/login_screen.dart';
+import 'package:defensa_civil/presentation/widgets/NavigationBar/DefensaNavigationBar.dart';
+import 'package:defensa_civil/presentation/widgets/drawers/home_drawer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,11 +26,33 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  Widget _buildDrawer(BuildContext context) {
+    switch (_currentIndex) {
+      case 0:
+        return HomeDrawer();
+      case 1:
+        return AlberguesDrawer();
+      case 2:
+        return RegisterDrawer();
+      default:
+        return HomeDrawer(); // Default drawer
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'SanFrancisco'),
+      theme: ThemeData(
+        fontFamily: 'SanFrancisco',
+        appBarTheme: AppBarTheme(
+          iconTheme: IconThemeData(color: Color.fromRGBO(239, 121, 42, 1)), // Change icon color here
+        ),
+        drawerTheme: DrawerThemeData(
+          backgroundColor: Color.fromRGBO(220, 220, 220, 1.0),
+
+        )
+      ),
       home: Scaffold(
         appBar: DefensaAppBar(context: context),
         body: IndexedStack(
@@ -41,36 +60,66 @@ class _MyAppState extends State<MyApp> {
           children: [
             HomeScreen(),
             AlberguesScreen(),
-            //Solo estaba para probar como se veria la pantalla, sustituir por la del login cuando este creada
-            LoginScreen()
-
+            RegisterScreen(),
           ],
         ),
-        bottomNavigationBar: Container(
-          color: Colors.white,
-          child: BottomNavigationBar(
-            currentIndex: _currentIndex,
-            onTap: _onTabTapped,
-            selectedItemColor: Color.fromRGBO(239, 121, 42, 1),
-            unselectedItemColor: Color.fromRGBO(15, 67, 116, 1),
-            selectedLabelStyle: TextStyle(color: Colors.red),
-            unselectedLabelStyle: TextStyle(color: Colors.white),
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.location_on_outlined),
-                label: 'Albergues',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.people_alt_outlined),
-                label: 'Login',
-              ),
-            ],
+        drawer: _buildDrawer(context),
+        bottomNavigationBar: DefensaNavigationBar(
+          index: _currentIndex,
+          onTabTapped: _onTabTapped,
+        )
+      ),
+    );
+  }
+}
+
+
+
+class AlberguesDrawer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: [
+          ListTile(
+            title: Text('Albergues Drawer Item 1'),
+            onTap: () {
+              // Handle item tap
+            },
           ),
-        ),
+          ListTile(
+            title: Text('Albergues Drawer Item 2'),
+            onTap: () {
+              // Handle item tap
+            },
+          ),
+          // Add more items as needed
+        ],
+      ),
+    );
+  }
+}
+
+class RegisterDrawer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: [
+          ListTile(
+            title: Text('Register Drawer Item 1'),
+            onTap: () {
+              // Handle item tap
+            },
+          ),
+          ListTile(
+            title: Text('Register Drawer Item 2'),
+            onTap: () {
+              // Handle item tap
+            },
+          ),
+          // Add more items as needed
+        ],
       ),
     );
   }

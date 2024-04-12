@@ -28,6 +28,7 @@ class HomeScreen extends StatelessWidget {
               slide(imagePath: 'assets/noticia2.jpeg'),
             ]),
       ),
+
     );
   }
 }
