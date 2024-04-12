@@ -24,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: DefensaAppBar(context: context),
       drawer: HomeDrawer(),
@@ -47,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
               slide(imagePath: 'assets/noticia2.jpeg'),
             ],
           ),
+
         ),
       ),
 
