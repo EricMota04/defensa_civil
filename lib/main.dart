@@ -1,9 +1,12 @@
 import 'package:defensa_civil/pages/albergues_screen.dart';
 import 'package:defensa_civil/pages/home_screen.dart';
+import 'package:defensa_civil/pages/news.dart';
+
 
 import 'package:defensa_civil/pages/medidas_preventivas.dart';
 import 'package:defensa_civil/pages/members_screen.dart';
 import 'package:defensa_civil/pages/register_screen.dart';
+
 
 import 'package:defensa_civil/presentation/widgets/AppBar/defensa_appbar.dart';
 import 'package:defensa_civil/pages/login_screen.dart';
@@ -43,7 +46,6 @@ class _MyAppState extends State<MyApp> {
             AlberguesScreen(),
             //Solo estaba para probar como se veria la pantalla, sustituir por la del login cuando este creada
             LoginScreen()
-
           ],
         ),
         bottomNavigationBar: Container(

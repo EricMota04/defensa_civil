@@ -13,20 +13,21 @@ class HomeScreen extends StatelessWidget {
         padding: EdgeInsets.only(
             bottom: 50.0), // Espacio adicional en la parte inferior
         child: CarouselSlider(
-            options: CarouselOptions(
-              height: MediaQuery.of(context).size.height * 0.70,
-              autoPlay: false,
-              enlargeCenterPage: true,
-              aspectRatio: 16 / 9,
-              autoPlayCurve: Curves.fastOutSlowIn,
-              enableInfiniteScroll: true,
-              autoPlayAnimationDuration: Duration(milliseconds: 800),
-              viewportFraction: 0.8,
-            ),
-            items: [
-              slide(imagePath: 'assets/noticia1.jpeg'),
-              slide(imagePath: 'assets/noticia2.jpeg'),
-            ]),
+          options: CarouselOptions(
+            height: MediaQuery.of(context).size.height * 0.70,
+            autoPlay: false,
+            enlargeCenterPage: true,
+            aspectRatio: 16 / 9,
+            autoPlayCurve: Curves.fastOutSlowIn,
+            enableInfiniteScroll: true,
+            autoPlayAnimationDuration: Duration(milliseconds: 800),
+            viewportFraction: 0.8,
+          ),
+          items: [
+            slide(imagePath: 'assets/accion1.jpeg', description: "Defensa Civil recupera los cuerpos de tres personas desaparecidas"),
+            slide(imagePath: 'assets/accion2.jpeg', description: "Director Defensa Civil encabeza búsqueda de tres personas desaparecidas",), //Aquí puedes agregar cuantas imagenes quieres
+          ]
+        ),
       ),
     );
   }
