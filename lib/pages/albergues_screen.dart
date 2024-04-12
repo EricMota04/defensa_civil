@@ -1,4 +1,6 @@
 import 'package:defensa_civil/presentation/widgets/AlberguesRows/Albergue.dart';
+import 'package:defensa_civil/presentation/widgets/AppBar/defensa_appbar.dart';
+import 'package:defensa_civil/presentation/widgets/drawers/albergues_drawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -7,8 +9,10 @@ class AlberguesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
+    return Scaffold(
+      appBar: DefensaAppBar(context: context),
+      drawer: AlberguesDrawer(),
+      body: Padding(
         padding: const EdgeInsets.all(22.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
