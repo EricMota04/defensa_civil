@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // Para crear uno hace falta solo el controlador
-class InputLogin extends StatefulWidget {
+class InputRegister extends StatefulWidget {
   // Elements
   final dynamic mode;
   final String? title;
@@ -12,9 +12,10 @@ class InputLogin extends StatefulWidget {
   final String? description;
   final dynamic inputHintColor;
   final dynamic inputFocusColor;
+  final dynamic descriptionColor;
   final TextEditingController controller;
 
-  const InputLogin({
+  const InputRegister({
     super.key,
     this.mode,
     this.title,
@@ -24,14 +25,15 @@ class InputLogin extends StatefulWidget {
     this.description,
     this.inputHintColor,
     this.inputFocusColor,
+    this.descriptionColor,
     required this.controller,
   });
 
   @override
-  State<InputLogin> createState() => InputLoginDesign();
+  State<InputRegister> createState() => InputRegisterDesign();
 }
 
-class InputLoginDesign extends State<InputLogin> {
+class InputRegisterDesign extends State<InputRegister> {
   // PassWord GestureDetector
   dynamic phantomPass;
   dynamic suffixIconSummon;
@@ -51,24 +53,23 @@ class InputLoginDesign extends State<InputLogin> {
       controller: widget.controller,
       keyboardType: widget.mode,
       obscureText: suffixIconSummon ? true : false,
-      style: const TextStyle(
-        color: Color.fromRGBO(239, 121, 42, 1),
-      ),
+      style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
         prefixIcon: Icon(
           widget.inputIcon ?? FontAwesomeIcons.solidUser,
-          color: widget.inputColor ?? const Color.fromRGBO(0, 0, 0, 1),
+          color: widget.inputColor ?? const Color.fromRGBO(239, 121, 42, 1),
           size: MediaQuery.of(context).size.height * 0.028,
         ),
         labelText: widget.title ?? "",
         labelStyle: TextStyle(
-          color: widget.inputColor ?? const Color.fromRGBO(0, 0, 0, 1),
+          color: widget.inputColor ?? const Color.fromRGBO(255, 255, 255, 0.5),
           fontWeight: FontWeight.w500,
           fontSize: MediaQuery.of(context).size.height * 0.02,
         ),
         hintText: widget.description ?? "",
         hintStyle: TextStyle(
-          color: widget.inputHintColor ?? const Color.fromRGBO(0, 0, 0, 0.2),
+          color:
+              widget.inputHintColor ?? const Color.fromRGBO(255, 255, 255, 0.2),
           fontSize: MediaQuery.of(context).size.height * 0.019,
         ),
         suffixIcon: phantomPass
@@ -82,24 +83,25 @@ class InputLoginDesign extends State<InputLogin> {
                   suffixIconSummon
                       ? FontAwesomeIcons.solidEyeSlash
                       : FontAwesomeIcons.solidEye,
-                  color: widget.inputColor ?? const Color.fromRGBO(0, 0, 0, 1),
+                  color: widget.inputColor ??
+                      const Color.fromRGBO(239, 121, 42, 1),
                   size: MediaQuery.of(context).size.height * 0.025,
                 ),
               )
             : null,
-        enabledBorder: OutlineInputBorder(
+        // Use solid border instead of outlined border
+        enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: widget.inputHintColor ?? const Color.fromRGBO(0, 0, 0, 0.2),
-            width: MediaQuery.of(context).size.height * 0.002,
+            color: widget.inputColor ??
+                const Color.fromRGBO(239, 121, 42, 1), // Set the border color
+            width: 1.0, // Set the border width
           ),
-          borderRadius: BorderRadius.circular(10),
         ),
-        focusedBorder: OutlineInputBorder(
+        focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: widget.inputFocusColor ?? const Color.fromRGBO(0, 0, 0, 1),
-            width: MediaQuery.of(context).size.width * 0.002,
+            color: Colors.orange, // Set the border color when focused
+            width: 2.0, // Increase the border width when focused
           ),
-          borderRadius: BorderRadius.circular(10),
         ),
       ),
     );
