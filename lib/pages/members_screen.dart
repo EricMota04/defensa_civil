@@ -30,7 +30,7 @@ class MembersScreen extends StatelessWidget {
                 MembersSlide(
                     imagePath: 'assets/juanrosario.jpeg',
                     name: 'Juan Rosario',
-                    charge: 'Palomo'),
+                    charge: 'Coordinador'),
                 MembersSlide(
                     imagePath: 'assets/imagen3.jpeg',
                     name: 'Palomo 2',
