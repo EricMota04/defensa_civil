@@ -18,13 +18,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  #URL Launcher
+  url_launcher: ^6.2.6
   # Animate Do
   animate_do: ^3.3.4
   # Icon Dependencies
   font_awesome_flutter: ^10.7.0
   cupertino_icons: ^1.0.6
   carousel_slider: ^4.2.1
+  http: ^1.2.1
 
 
 dev_dependencies:
