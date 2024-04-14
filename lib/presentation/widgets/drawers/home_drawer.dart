@@ -1,3 +1,4 @@
+import 'package:defensa_civil/pages/news.dart';
 import 'package:flutter/material.dart';
 
 import '../../../main.dart';
@@ -87,7 +88,7 @@ class HomeDrawer extends StatelessWidget {
                         fontSize: 24),
                   ),
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => News()));
                   },
                 ),
                 ListTile(

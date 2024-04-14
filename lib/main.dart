@@ -1,3 +1,4 @@
+import 'package:defensa_civil/pages/about_screen.dart';
 import 'package:defensa_civil/pages/albergues_screen.dart';
 import 'package:defensa_civil/pages/home_screen.dart';
 
@@ -59,7 +60,7 @@ class _MyAppState extends State<MyApp> {
               body: IndexedStack(
                 index: _currentIndex,
                 children: [
-                  HomeScreen(),
+                  AboutScreen(),
                   AlberguesScreen(),
                   RegisterScreen(),
                 ],
