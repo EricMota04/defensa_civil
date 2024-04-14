@@ -11,7 +11,7 @@ class slide extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-          color: const Color.fromRGBO(15, 67, 116, 1), // Color de fondo azul
+          color: Color.fromRGBO(15, 67, 116, 1), // Color de fondo azul
           borderRadius: BorderRadius.circular(50.0), // Bordes redondeados
           boxShadow: [
             BoxShadow(
@@ -24,28 +24,33 @@ class slide extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(left: 10.0, right: 10.0),
         child: Container(
-          constraints: const BoxConstraints(maxWidth: 1.0, maxHeight: 1.0),
+          constraints: BoxConstraints(maxWidth: 1.0, maxHeight: 1.0),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 30.0),
-                child: Text(
-                  description,
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Color.fromRGBO(239, 121, 42, 1),
-                    fontWeight: FontWeight.w700,
+              Flexible(
+                flex: 1,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 30.0),
+                  child: Text(
+                    description,
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color.fromRGBO(239, 121, 42, 1),
+                      fontWeight: FontWeight.w700,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
                 ),
               ),
-              Container(
-                child: ClipRRect(
-                  borderRadius:
-                      BorderRadius.circular(50.0), // Bordes redondeados
-                  child: Image.asset(
-                    imagePath,
-                    fit: BoxFit.cover, // La imagen se ajusta al contenedor
+              Expanded(
+                flex: 2,
+                child: Container(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(50.0), // Bordes redondeados
+                    child: Image.asset(
+                      imagePath,
+                      fit: BoxFit.cover, // La imagen se ajusta al contenedor
+                    ),
                   ),
                 ),
               ),
