@@ -1,4 +1,6 @@
+import 'package:defensa_civil/pages/about_screen.dart';
 import 'package:defensa_civil/pages/news.dart';
+import 'package:defensa_civil/pages/services_screen.dart';
 import 'package:defensa_civil/pages/videos_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +28,7 @@ class HomeDrawer extends StatelessWidget {
                   ),
                   title: const Text(
                     'Historia',
-                    style:  TextStyle(
+                    style: TextStyle(
                         color: Color.fromRGBO(15, 67, 116, 1),
                         fontWeight: FontWeight.w700,
                         fontSize: 24),
@@ -34,7 +36,8 @@ class HomeDrawer extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const HistoryScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const HistoryScreen()),
                     );
                   },
                 ),
@@ -52,8 +55,10 @@ class HomeDrawer extends StatelessWidget {
                         fontSize: 24),
                   ),
                   onTap: () {
-
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => MembersScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MembersScreen()));
                   },
                 ),
                 ListTile(
@@ -70,7 +75,8 @@ class HomeDrawer extends StatelessWidget {
                         fontSize: 24),
                   ),
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => News()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => News()));
                   },
                 ),
                 ListTile(
@@ -87,7 +93,10 @@ class HomeDrawer extends StatelessWidget {
                         fontSize: 24),
                   ),
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const VideosScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const VideosScreen()));
                   },
                 ),
                 ListTile(
@@ -104,7 +113,10 @@ class HomeDrawer extends StatelessWidget {
                         fontSize: 24),
                   ),
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ServicesScreen()));
                   },
                 ),
                 SizedBox(
@@ -118,13 +130,13 @@ class HomeDrawer extends StatelessWidget {
                   ),
                   title: const Text(
                     'Acerca de',
-                    style:  TextStyle(
+                    style: TextStyle(
                         color: Color.fromRGBO(15, 67, 116, 1),
                         fontWeight: FontWeight.w700,
                         fontSize: 24),
                   ),
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => AboutScreen()));
                   },
                 ),
                 Container(

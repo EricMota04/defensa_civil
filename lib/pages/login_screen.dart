@@ -1,7 +1,9 @@
+import 'package:defensa_civil/classes/api_manager.dart';
 import 'package:defensa_civil/pages/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:http/http.dart' as http;
 
 // Widgets
 import 'package:defensa_civil/presentation/widgets/inputs/inputlogin.dart';
@@ -83,13 +85,20 @@ class LoginDesign extends State<LoginScreen> {
                   ),
                   ButtonOrange(
                     title: "Iniciar Sesión",
+                    onPressed: () {
+                      APIManager.logIn(context, userController.text,
+                          passWordController.text);
+                    },
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RegisterScreen()));
                     },
                     child: Text(
                       "¿Aun no eres miembro? Haz clic para registrarte",

@@ -39,21 +39,14 @@ class SlideAbout extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 30.0),
                 child: Column(
                   children: [
-                    GestureDetector(
-                      onTap: () async{
-                        await launch(
-                          url
-                        );
-                      },
-                      child: Text(
-                        name,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          color: Color.fromRGBO(239, 121, 42, 1),
-                          fontWeight: FontWeight.w700,
-                        ),
-                        textAlign: TextAlign.center,
+                    Text(
+                      name,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        color: Color.fromRGBO(239, 121, 42, 1),
+                        fontWeight: FontWeight.w700,
                       ),
+                      textAlign: TextAlign.center,
                     ),
                     Text(
                       Enrollnumber,
@@ -67,16 +60,21 @@ class SlideAbout extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                child: ClipRRect(
-                  borderRadius:
-                      BorderRadius.circular(50.0), // Bordes redondeados
-                  child: Image.asset(
-                    imagePath,
-                    fit: BoxFit.cover, // La imagen se ajusta al contenedor
+              GestureDetector(
+                onTap: () async {
+                  await launch(url);
+                },
+                child: Container(
+                  child: ClipRRect(
+                    borderRadius:
+                        BorderRadius.circular(50.0), // Bordes redondeados
+                    child: Image.asset(
+                      imagePath,
+                      fit: BoxFit.cover, // La imagen se ajusta al contenedor
+                    ),
                   ),
                 ),
-              ),
+              )
             ],
           ),
         ),
