@@ -9,9 +9,10 @@ class ButtonOrange extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         onPressed: () {},
-        child: Text(title ?? '', style: TextStyle(
-          fontSize: 20
-        ),),
+        child: Text(
+          title ?? '',
+          style: TextStyle(fontSize: 20),
+        ),
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(
             Color.fromRGBO(239, 121, 42, 1),
@@ -20,7 +21,6 @@ class ButtonOrange extends StatelessWidget {
           minimumSize: MaterialStateProperty.all<Size>(
             Size(250, 50),
           ),
-
         ));
   }
 }

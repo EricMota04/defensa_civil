@@ -53,6 +53,7 @@ class InputRegisterDesign extends State<InputRegister> {
       controller: widget.controller,
       keyboardType: widget.mode,
       obscureText: suffixIconSummon ? true : false,
+      style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         prefixIcon: Icon(
           widget.inputIcon ?? FontAwesomeIcons.solidUser,
@@ -67,34 +68,37 @@ class InputRegisterDesign extends State<InputRegister> {
         ),
         hintText: widget.description ?? "",
         hintStyle: TextStyle(
-          color: widget.inputHintColor ?? const Color.fromRGBO(255, 255, 255, 0.2),
+          color:
+              widget.inputHintColor ?? const Color.fromRGBO(255, 255, 255, 0.2),
           fontSize: MediaQuery.of(context).size.height * 0.019,
         ),
         suffixIcon: phantomPass
             ? GestureDetector(
-          onTap: () {
-            setState(() {
-              suffixIconSummon = !suffixIconSummon;
-            });
-          },
-          child: Icon(
-            suffixIconSummon
-                ? FontAwesomeIcons.solidEyeSlash
-                : FontAwesomeIcons.solidEye,
-            color: widget.inputColor ?? const Color.fromRGBO(239, 121, 42, 1),
-            size: MediaQuery.of(context).size.height * 0.025,
-          ),
-        )
+                onTap: () {
+                  setState(() {
+                    suffixIconSummon = !suffixIconSummon;
+                  });
+                },
+                child: Icon(
+                  suffixIconSummon
+                      ? FontAwesomeIcons.solidEyeSlash
+                      : FontAwesomeIcons.solidEye,
+                  color: widget.inputColor ??
+                      const Color.fromRGBO(239, 121, 42, 1),
+                  size: MediaQuery.of(context).size.height * 0.025,
+                ),
+              )
             : null,
         // Use solid border instead of outlined border
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: widget.inputColor ?? const Color.fromRGBO(239, 121, 42, 1), // Set the border color
+            color: widget.inputColor ??
+                const Color.fromRGBO(239, 121, 42, 1), // Set the border color
             width: 1.0, // Set the border width
           ),
         ),
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
+        focusedBorder: const UnderlineInputBorder(
+          borderSide:  BorderSide(
             color: Colors.orange, // Set the border color when focused
             width: 2.0, // Increase the border width when focused
           ),
