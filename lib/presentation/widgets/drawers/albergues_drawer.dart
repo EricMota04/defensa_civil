@@ -1,5 +1,6 @@
 import 'package:defensa_civil/pages/albergues_screen.dart';
 import 'package:defensa_civil/pages/medidas_preventivas.dart';
+import 'package:defensa_civil/presentation/widgets/mapa/mapaview.dart';
 import 'package:flutter/material.dart';
 
 
@@ -48,10 +49,10 @@ class AlberguesDrawer extends StatelessWidget {
                         fontSize: 26),
                   ),
                   onTap: () {
-                    /* Navigator.push(
+                    Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HistoryScreen()),
-                    );*/
+                      MaterialPageRoute(builder: (context) => MapaAlbergues()),
+                    );
                   },
                 ),
                 ListTile(
