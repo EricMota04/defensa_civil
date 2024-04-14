@@ -60,7 +60,7 @@ class _MembersScreenState extends State<MembersScreen> {
           child: CarouselSlider.builder(
             itemCount: membersList.length,
             options: CarouselOptions(
-              height: MediaQuery.of(context).size.height * 0.70,
+              height: MediaQuery.of(context).size.height * 0.5,
               autoPlay: false,
               enlargeCenterPage: true,
               aspectRatio: 16 / 9,
@@ -76,11 +76,11 @@ class _MembersScreenState extends State<MembersScreen> {
                   strokeWidth: 3,
                 );
               } else {
-                final albergue = membersList[index];
+                final members = membersList[index];
                 return MembersSlide(
-                  name: albergue["nombre"],
-                  charge: albergue["cargo"],
-                  imagePath: albergue["foto"],
+                  name: members["nombre"],
+                  charge: members["cargo"],
+                  imagePath: members["foto"],
                 );
               }
             },

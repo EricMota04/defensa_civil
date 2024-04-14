@@ -1,7 +1,7 @@
 import 'package:defensa_civil/pages/albergues_screen.dart';
 import 'package:defensa_civil/pages/home_screen.dart';
 
-import 'package:defensa_civil/presentation/widgets/NavigationBar/DefensaNavigationBar.dart';
+import 'package:defensa_civil/presentation/widgets/NavigationBar/defensa_navigation_bar.dart';
 
 import 'package:defensa_civil/pages/login_screen.dart';
 
