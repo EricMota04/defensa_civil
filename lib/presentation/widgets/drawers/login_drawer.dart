@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../main.dart';
 import '../../../pages/history_screen.dart';
-import '../../../pages/members_screen.dart';
 
 class LoginDrawer extends StatelessWidget {
   @override

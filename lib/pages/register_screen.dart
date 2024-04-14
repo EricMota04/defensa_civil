@@ -2,7 +2,6 @@ import 'package:defensa_civil/presentation/widgets/Buttons/button_orange.dart';
 import 'package:defensa_civil/presentation/widgets/inputs/inputregister.dart';
 import 'package:flutter/material.dart';
 
-import 'login_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
   final TextEditingController cedulaController = TextEditingController();

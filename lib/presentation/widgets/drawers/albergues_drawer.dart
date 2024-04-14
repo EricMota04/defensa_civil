@@ -1,4 +1,3 @@
-import 'package:defensa_civil/pages/albergues_screen.dart';
 import 'package:defensa_civil/pages/medidas_preventivas.dart';
 import 'package:flutter/material.dart';
 

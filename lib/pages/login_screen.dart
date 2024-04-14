@@ -1,5 +1,4 @@
 import 'package:defensa_civil/pages/register_screen.dart';
-import 'package:defensa_civil/presentation/widgets/drawers/login_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -7,7 +6,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // Widgets
 import 'package:defensa_civil/presentation/widgets/inputs/inputlogin.dart';
 import 'package:defensa_civil/presentation/widgets/Buttons/button_orange.dart';
-import 'package:defensa_civil/presentation/widgets/drawers/login_drawer.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({
