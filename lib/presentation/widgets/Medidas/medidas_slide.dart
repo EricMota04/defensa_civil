@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 class MedidasSlide extends StatelessWidget {
   final String title;
   final String info;
+  final String image;
 
   const MedidasSlide(
-      { required this.title, required this.info});
+      { required this.title, required this.info, required this.image});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +44,7 @@ class MedidasSlide extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.01,
                 ),
-
+                Image.network(image),
                 Text(
                   info,
                   style: TextStyle(

@@ -1,17 +1,17 @@
 import 'package:defensa_civil/pages/about_screen.dart';
 import 'package:defensa_civil/pages/albergues_screen.dart';
 import 'package:defensa_civil/pages/home_screen.dart';
-
+import 'package:defensa_civil/presentation/widgets/NavigationBar/defensa_navigation_bar.dart';
 import 'package:defensa_civil/pages/register_screen.dart';
-import 'package:defensa_civil/presentation/widgets/NavigationBar/DefensaNavigationBar.dart';
+import 'package:defensa_civil/pages/services_screen.dart';
+
 
 import 'package:defensa_civil/pages/news.dart';
-
+import 'package:defensa_civil/pages/videos_screen.dart';
 
 import 'package:defensa_civil/pages/medidas_preventivas.dart';
 import 'package:defensa_civil/pages/members_screen.dart';
 import 'package:defensa_civil/pages/register_screen.dart';
-
 
 import 'package:defensa_civil/presentation/widgets/AppBar/defensa_appbar.dart';
 import 'package:defensa_civil/pages/login_screen.dart';
@@ -42,18 +42,17 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
       theme: ThemeData(
         fontFamily: 'SanFrancisco',
         appBarTheme: AppBarTheme(
           iconTheme: IconThemeData(color: Color.fromRGBO(239, 121, 42, 1)),
-
         ),
         drawerTheme: DrawerThemeData(
           backgroundColor: Color.fromRGBO(220, 220, 220, 1.0),
         ),
       ),
-      home: Navigator( // Wrap your Scaffold with Navigator
+      home: Navigator(
+        // Wrap your Scaffold with Navigator
         onGenerateRoute: (settings) {
           return MaterialPageRoute(
             builder: (context) => Scaffold(
@@ -62,7 +61,7 @@ class _MyAppState extends State<MyApp> {
                 children: [
                   AboutScreen(),
                   AlberguesScreen(),
-                  RegisterScreen(),
+                  LoginScreen(),
                 ],
               ),
               bottomNavigationBar: DefensaNavigationBar(
@@ -76,10 +75,6 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
-
-
-
 
 class RegisterDrawer extends StatelessWidget {
   @override

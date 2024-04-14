@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
-class slide extends StatelessWidget {
+class Slidenetwork extends StatelessWidget {
   final String imagePath;
   final String description;
   final String text;
 
-  const slide({required this.imagePath, required this.description, required this.text});
+  const Slidenetwork(
+      {super.key,
+      required this.imagePath,
+      required this.description,
+      required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +38,7 @@ class slide extends StatelessWidget {
                   description,
                   style: const TextStyle(
                     fontSize: 20,
-                    color:  Color.fromRGBO(239, 121, 42, 1),
+                    color: Color.fromRGBO(239, 121, 42, 1),
                     fontWeight: FontWeight.w700,
                   ),
                   textAlign: TextAlign.center,
@@ -44,12 +48,14 @@ class slide extends StatelessWidget {
                 onTap: () {
                   _showImagePopup(context);
                 },
-                child: ClipRRect(
-                  borderRadius:
-                      BorderRadius.circular(50.0), // Bordes redondeados
-                  child: Image.network(
-                    imagePath,
-                    fit: BoxFit.cover, // La imagen se ajusta al contenedor
+                child: Container(
+                  child: ClipRRect(
+                    borderRadius:
+                        BorderRadius.circular(50.0), // Bordes redondeados
+                    child: Image.network(
+                      imagePath,
+                      fit: BoxFit.cover, // La imagen se ajusta al contenedor
+                    ),
                   ),
                 ),
               ),
@@ -65,14 +71,14 @@ class slide extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: const Color.fromRGBO(15, 67, 116, 1),
+          backgroundColor: Color.fromRGBO(15, 67, 116, 1),
           content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   description,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 20,
                     color: Color.fromRGBO(239, 121, 42, 1),
                     fontWeight: FontWeight.w700,
@@ -87,11 +93,13 @@ class slide extends StatelessWidget {
                         .contain, // Ajustar imagen al contenedor del AlertDialog
                   ),
                 ),
-                Text(text,
-                  style: const TextStyle(
+                Text(
+                  text,
+                  style: TextStyle(
                     fontSize: 14,
                     color: Colors.white,
-                    fontWeight: FontWeight.w500,),
+                    fontWeight: FontWeight.w500,
+                  ),
                 )
               ],
             ),
@@ -101,9 +109,9 @@ class slide extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pop(); // Cerrar el AlertDialog
               },
-              child: const Text(
+              child: Text(
                 'Cerrar',
-                style:  TextStyle(color: Color.fromRGBO(239, 121, 42, 1)),
+                style: TextStyle(color: Color.fromRGBO(239, 121, 42, 1)),
               ),
             ),
           ],

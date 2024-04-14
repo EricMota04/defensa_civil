@@ -1,7 +1,7 @@
 import 'package:defensa_civil/pages/news.dart';
+import 'package:defensa_civil/pages/videos_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../../../main.dart';
 import '../../../pages/history_screen.dart';
 import '../../../pages/members_screen.dart';
 
@@ -15,36 +15,18 @@ class HomeDrawer extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 ListTile(
-                  leading: Icon(
-                    Icons.home,
-                    color: Color.fromRGBO(239, 121, 42, 1),
-                    size: 24,
-                  ),
-                  title: Text(
-                    'Inicio',
-                    style: TextStyle(
-                        color: Color.fromRGBO(15, 67, 116, 1),
-                        fontWeight: FontWeight.w700,
-                        fontSize: 24),
-                  ),
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MyApp()));
-                  },
-                ),
-                ListTile(
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.book,
                     color: Color.fromRGBO(239, 121, 42, 1),
                     size: 24,
                   ),
-                  title: Text(
+                  title: const Text(
                     'Historia',
-                    style: TextStyle(
+                    style:  TextStyle(
                         color: Color.fromRGBO(15, 67, 116, 1),
                         fontWeight: FontWeight.w700,
                         fontSize: 24),
@@ -52,17 +34,17 @@ class HomeDrawer extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HistoryScreen()),
+                      MaterialPageRoute(builder: (context) => const HistoryScreen()),
                     );
                   },
                 ),
                 ListTile(
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.emoji_people_outlined,
                     color: Color.fromRGBO(239, 121, 42, 1),
                     size: 30,
                   ),
-                  title: Text(
+                  title: const Text(
                     'Miembros',
                     style: TextStyle(
                         color: Color.fromRGBO(15, 67, 116, 1),
@@ -75,12 +57,12 @@ class HomeDrawer extends StatelessWidget {
                   },
                 ),
                 ListTile(
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.add_alert,
                     color: Color.fromRGBO(239, 121, 42, 1),
                     size: 24,
                   ),
-                  title: Text(
+                  title: const Text(
                     'Noticias',
                     style: TextStyle(
                         color: Color.fromRGBO(15, 67, 116, 1),
@@ -92,12 +74,12 @@ class HomeDrawer extends StatelessWidget {
                   },
                 ),
                 ListTile(
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.video_collection_sharp,
                     color: Color.fromRGBO(239, 121, 42, 1),
                     size: 24,
                   ),
-                  title: Text(
+                  title: const Text(
                     'Videos',
                     style: TextStyle(
                         color: Color.fromRGBO(15, 67, 116, 1),
@@ -105,16 +87,16 @@ class HomeDrawer extends StatelessWidget {
                         fontSize: 24),
                   ),
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const VideosScreen()));
                   },
                 ),
                 ListTile(
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.people,
                     color: Color.fromRGBO(239, 121, 42, 1),
                     size: 28,
                   ),
-                  title: Text(
+                  title: const Text(
                     'Servicios',
                     style: TextStyle(
                         color: Color.fromRGBO(15, 67, 116, 1),
@@ -129,14 +111,14 @@ class HomeDrawer extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.38,
                 ),
                 ListTile(
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.info_outline,
                     color: Color.fromRGBO(239, 121, 42, 1),
                     size: 24,
                   ),
-                  title: Text(
+                  title: const Text(
                     'Acerca de',
-                    style: TextStyle(
+                    style:  TextStyle(
                         color: Color.fromRGBO(15, 67, 116, 1),
                         fontWeight: FontWeight.w700,
                         fontSize: 24),
