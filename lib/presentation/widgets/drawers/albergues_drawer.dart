@@ -1,4 +1,3 @@
-import 'package:defensa_civil/pages/albergues_screen.dart';
 import 'package:defensa_civil/pages/medidas_preventivas.dart';
 import 'package:flutter/material.dart';
 
@@ -15,24 +14,6 @@ class AlberguesDrawer extends StatelessWidget {
               children: [
                 SizedBox(
                   height: 30,
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.house,
-                    color: Color.fromRGBO(239, 121, 42, 1),
-                    size: 26,
-                  ),
-                  title: Text(
-                    'Albergues',
-                    style: TextStyle(
-                        color: Color.fromRGBO(15, 67, 116, 1),
-                        fontWeight: FontWeight.w700,
-                        fontSize: 24),
-                  ),
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AlberguesScreen()));
-                  },
                 ),
                 ListTile(
                   leading: Icon(

@@ -1,6 +1,7 @@
+import 'package:defensa_civil/pages/news.dart';
+import 'package:defensa_civil/pages/videos_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../../../main.dart';
 import '../../../pages/history_screen.dart';
 import '../../../pages/members_screen.dart';
 
@@ -16,24 +17,6 @@ class HomeDrawer extends StatelessWidget {
               children: [
                 SizedBox(
                   height: 30,
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.home,
-                    color: Color.fromRGBO(239, 121, 42, 1),
-                    size: 24,
-                  ),
-                  title: Text(
-                    'Inicio',
-                    style: TextStyle(
-                        color: Color.fromRGBO(15, 67, 116, 1),
-                        fontWeight: FontWeight.w700,
-                        fontSize: 24),
-                  ),
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MyApp()));
-                  },
                 ),
                 ListTile(
                   leading: Icon(
@@ -87,7 +70,7 @@ class HomeDrawer extends StatelessWidget {
                         fontSize: 24),
                   ),
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => News()));
                   },
                 ),
                 ListTile(
@@ -104,7 +87,7 @@ class HomeDrawer extends StatelessWidget {
                         fontSize: 24),
                   ),
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => VideosScreen()));
                   },
                 ),
                 ListTile(

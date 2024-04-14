@@ -1,9 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:defensa_civil/pages/albergues_screen.dart';
 import 'package:defensa_civil/presentation/widgets/AppBar/defensa_appbar.dart';
 import 'package:defensa_civil/presentation/widgets/Medidas/medidas_slide.dart';
-import 'package:defensa_civil/presentation/widgets/NavigationBar/DefensaNavigationBar.dart';
-import 'package:defensa_civil/presentation/widgets/drawers/albergues_drawer.dart';
 import 'package:flutter/material.dart';
 
 class MedidasScreen extends StatelessWidget {
@@ -13,7 +10,6 @@ class MedidasScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DefensaAppBar(context: context),
-      drawer: AlberguesDrawer(),
       body: Center(
         child: Padding(
           padding: EdgeInsets.only(
