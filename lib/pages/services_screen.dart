@@ -71,7 +71,7 @@ class ServicesDesign extends State<ServicesScreen> {
                   );
                 }).toList(),
                 options: CarouselOptions(
-                  height: MediaQuery.of(context).size.height * 0.60,
+                  height: MediaQuery.of(context).size.height * 0.45,
                   autoPlay: false,
                   enlargeCenterPage: true,
                   aspectRatio: 16 / 9,

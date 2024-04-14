@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
               body: IndexedStack(
                 index: _currentIndex,
                 children: [
-                  AboutScreen(),
+                  HomeScreen(),
                   AlberguesScreen(),
                   LoginScreen(),
                 ],
