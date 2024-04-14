@@ -9,11 +9,10 @@ class News extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 10.0),
-      child: Column(
+    return Scaffold(
+      appBar: AppBar(),
+      body: Column(
       children: [
-        SizedBox(height: MediaQuery.of(context).padding.top,),
         Text(
           "NOTICIAS",
           style: TextStyle(
@@ -54,7 +53,7 @@ class News extends StatelessWidget {
                 ]),
           ),
         ),
-      ],)
+      ],),
     );
   }
 }

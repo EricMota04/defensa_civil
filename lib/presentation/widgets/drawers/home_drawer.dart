@@ -1,3 +1,5 @@
+import 'package:defensa_civil/pages/news.dart';
+import 'package:defensa_civil/pages/videos_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../pages/history_screen.dart';
@@ -68,7 +70,7 @@ class HomeDrawer extends StatelessWidget {
                         fontSize: 24),
                   ),
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => News()));
                   },
                 ),
                 ListTile(
@@ -85,7 +87,7 @@ class HomeDrawer extends StatelessWidget {
                         fontSize: 24),
                   ),
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => VideosScreen()));
                   },
                 ),
                 ListTile(
