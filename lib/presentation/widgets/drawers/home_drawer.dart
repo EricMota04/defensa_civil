@@ -19,24 +19,6 @@ class HomeDrawer extends StatelessWidget {
                 ),
                 ListTile(
                   leading: Icon(
-                    Icons.home,
-                    color: Color.fromRGBO(239, 121, 42, 1),
-                    size: 24,
-                  ),
-                  title: Text(
-                    'Inicio',
-                    style: TextStyle(
-                        color: Color.fromRGBO(15, 67, 116, 1),
-                        fontWeight: FontWeight.w700,
-                        fontSize: 24),
-                  ),
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MyApp()));
-                  },
-                ),
-                ListTile(
-                  leading: Icon(
                     Icons.book,
                     color: Color.fromRGBO(239, 121, 42, 1),
                     size: 24,

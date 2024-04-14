@@ -18,24 +18,6 @@ class AlberguesDrawer extends StatelessWidget {
                 ),
                 ListTile(
                   leading: Icon(
-                    Icons.house,
-                    color: Color.fromRGBO(239, 121, 42, 1),
-                    size: 26,
-                  ),
-                  title: Text(
-                    'Albergues',
-                    style: TextStyle(
-                        color: Color.fromRGBO(15, 67, 116, 1),
-                        fontWeight: FontWeight.w700,
-                        fontSize: 24),
-                  ),
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AlberguesScreen()));
-                  },
-                ),
-                ListTile(
-                  leading: Icon(
                     Icons.map,
                     color: Color.fromRGBO(239, 121, 42, 1),
                     size: 26,

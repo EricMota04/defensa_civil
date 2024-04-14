@@ -44,8 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
               viewportFraction: 0.8,
             ),
             items: [
-              slide(imagePath: 'assets/noticia1.jpeg'),
-              slide(imagePath: 'assets/noticia2.jpeg'),
+              slide(imagePath: 'assets/noticia1.jpeg', description: 'si',),
+              slide(imagePath: 'assets/noticia2.jpeg', description: 'si',),
             ],
           ),
 

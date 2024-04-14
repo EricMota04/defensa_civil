@@ -13,7 +13,6 @@ class MedidasScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DefensaAppBar(context: context),
-      drawer: AlberguesDrawer(),
       body: Center(
         child: Padding(
           padding: EdgeInsets.only(

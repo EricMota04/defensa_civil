@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
                 children: [
                   HomeScreen(),
                   AlberguesScreen(),
-                  RegisterScreen(),
+                  LoginScreen(),
                 ],
               ),
               bottomNavigationBar: DefensaNavigationBar(
@@ -80,27 +80,3 @@ class _MyAppState extends State<MyApp> {
 
 
 
-class RegisterDrawer extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        children: [
-          ListTile(
-            title: Text('Register Drawer Item 1'),
-            onTap: () {
-              // Handle item tap
-            },
-          ),
-          ListTile(
-            title: Text('Register Drawer Item 2'),
-            onTap: () {
-              // Handle item tap
-            },
-          ),
-          // Add more items as needed
-        ],
-      ),
-    );
-  }
-}
