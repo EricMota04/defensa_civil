@@ -85,6 +85,11 @@ class _AlberguesScreenState extends State<AlberguesScreen> {
                     title: albergue["edificio"],
                     city: albergue["ciudad"],
                     phoneNumber: albergue["telefono"],
+                    capacity: albergue["capacidad"],
+                    code: albergue["codigo"],
+                    coordinator: albergue["coordinador"],
+                    lat: albergue["lat"],
+                    lon: albergue["lng"],
                   );
                 },
               ),

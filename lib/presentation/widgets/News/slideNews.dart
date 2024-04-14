@@ -47,7 +47,7 @@ class slide extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius:
                       BorderRadius.circular(50.0), // Bordes redondeados
-                  child: Image.asset(
+                  child: Image.network(
                     imagePath,
                     fit: BoxFit.cover, // La imagen se ajusta al contenedor
                   ),
@@ -81,7 +81,7 @@ class slide extends StatelessWidget {
                 ),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(30.0),
-                  child: Image.asset(
+                  child: Image.network(
                     imagePath,
                     fit: BoxFit
                         .contain, // Ajustar imagen al contenedor del AlertDialog
