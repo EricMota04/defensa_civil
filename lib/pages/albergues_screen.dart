@@ -88,8 +88,8 @@ class _AlberguesScreenState extends State<AlberguesScreen> {
                     capacity: albergue["capacidad"],
                     code: albergue["codigo"],
                     coordinator: albergue["coordinador"],
-                    lat: albergue["lat"],
-                    lon: albergue["lng"],
+                    lat: albergue["lng"],
+                    lon: albergue["lat"],
                   );
                 },
               ),
