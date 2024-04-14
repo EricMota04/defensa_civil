@@ -12,16 +12,16 @@ class AlberguesDrawer extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 ListTile(
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.map,
                     color: Color.fromRGBO(239, 121, 42, 1),
                     size: 26,
                   ),
-                  title: Text(
+                  title: const Text(
                     'Vista de mapa',
                     style: TextStyle(
                         color: Color.fromRGBO(15, 67, 116, 1),
@@ -36,12 +36,12 @@ class AlberguesDrawer extends StatelessWidget {
                   },
                 ),
                 ListTile(
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.warning,
                     color: Color.fromRGBO(239, 121, 42, 1),
                     size: 26,
                   ),
-                  title: Text(
+                  title: const Text(
                     'Medidas preventivas',
                     style: TextStyle(
                         color: Color.fromRGBO(15, 67, 116, 1),
@@ -51,7 +51,7 @@ class AlberguesDrawer extends StatelessWidget {
                   onTap: () {
                      Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MedidasScreen()),
+                      MaterialPageRoute(builder: (context) => const MedidasScreen()),
                     );
                   },
                 ),

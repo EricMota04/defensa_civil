@@ -34,6 +34,7 @@ class MembersSlide extends StatelessWidget {
                   color: Color.fromRGBO(239, 121, 42, 1),
                   fontSize: 26,
                   fontWeight: FontWeight.w700),
+              textAlign: TextAlign.center,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
@@ -43,7 +44,7 @@ class MembersSlide extends StatelessWidget {
                 child: Container(
                   constraints: BoxConstraints(
                       maxHeight: MediaQuery.of(context).size.height * 0.4),
-                  child: Image.asset(
+                  child: Image.network(
                     imagePath,
                     fit: BoxFit.cover, // La imagen se ajusta al contenedor
                   ),
@@ -55,6 +56,7 @@ class MembersSlide extends StatelessWidget {
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
               ),
+              textAlign: TextAlign.center,
             )
           ],
         ),

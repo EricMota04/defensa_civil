@@ -34,11 +34,13 @@ class AlbergueRowDesign extends State<AlbergueRow> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  widget.title,
+                  widget.title.length > 32 ? '${widget.title.substring(0, 32)}...' : widget.title,
                   style: TextStyle(
                       fontSize: 18,
                       color: Color.fromRGBO(15, 67, 116, 1),
                       fontWeight: FontWeight.w700),
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
                 ),
                 Text(
                   widget.city,

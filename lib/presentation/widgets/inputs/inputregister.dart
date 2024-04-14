@@ -53,7 +53,7 @@ class InputRegisterDesign extends State<InputRegister> {
       controller: widget.controller,
       keyboardType: widget.mode,
       obscureText: suffixIconSummon ? true : false,
-      style: TextStyle(color: Colors.white),
+      style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         prefixIcon: Icon(
           widget.inputIcon ?? FontAwesomeIcons.solidUser,
@@ -97,8 +97,8 @@ class InputRegisterDesign extends State<InputRegister> {
             width: 1.0, // Set the border width
           ),
         ),
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
+        focusedBorder: const UnderlineInputBorder(
+          borderSide:  BorderSide(
             color: Colors.orange, // Set the border color when focused
             width: 2.0, // Increase the border width when focused
           ),
