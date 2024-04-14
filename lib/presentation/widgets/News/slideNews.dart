@@ -12,29 +12,29 @@ class slide extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-          color: Color.fromRGBO(15, 67, 116, 1), // Color de fondo azul
+          color: const Color.fromRGBO(15, 67, 116, 1), // Color de fondo azul
           borderRadius: BorderRadius.circular(50.0), // Bordes redondeados
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.5), // Color de la sombra
               spreadRadius: 5, // Difusión de la sombra
               blurRadius: 7, // Desenfoque de la sombra
-              offset: Offset(0, 4), // Offset de la sombra (x, y)
+              offset: const Offset(0, 4), // Offset de la sombra (x, y)
             ),
           ]),
       child: Padding(
         padding: const EdgeInsets.only(left: 10.0, right: 10.0),
         child: Container(
-          constraints: BoxConstraints(maxWidth: 1.0, maxHeight: 1.0),
+          constraints: const BoxConstraints(maxWidth: 1.0, maxHeight: 1.0),
           child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 70.0),
                 child: Text(
                   description,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
-                    color: Color.fromRGBO(239, 121, 42, 1),
+                    color:  Color.fromRGBO(239, 121, 42, 1),
                     fontWeight: FontWeight.w700,
                   ),
                   textAlign: TextAlign.center,
@@ -44,14 +44,12 @@ class slide extends StatelessWidget {
                 onTap: () {
                   _showImagePopup(context);
                 },
-                child: Container(
-                  child: ClipRRect(
-                    borderRadius:
-                        BorderRadius.circular(50.0), // Bordes redondeados
-                    child: Image.asset(
-                      imagePath,
-                      fit: BoxFit.cover, // La imagen se ajusta al contenedor
-                    ),
+                child: ClipRRect(
+                  borderRadius:
+                      BorderRadius.circular(50.0), // Bordes redondeados
+                  child: Image.asset(
+                    imagePath,
+                    fit: BoxFit.cover, // La imagen se ajusta al contenedor
                   ),
                 ),
               ),
@@ -67,14 +65,14 @@ class slide extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: Color.fromRGBO(15, 67, 116, 1),
+          backgroundColor: const Color.fromRGBO(15, 67, 116, 1),
           content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   description,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     color: Color.fromRGBO(239, 121, 42, 1),
                     fontWeight: FontWeight.w700,
@@ -90,7 +88,7 @@ class slide extends StatelessWidget {
                   ),
                 ),
                 Text(text,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     color: Colors.white,
                     fontWeight: FontWeight.w500,),
@@ -103,9 +101,9 @@ class slide extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pop(); // Cerrar el AlertDialog
               },
-              child: Text(
+              child: const Text(
                 'Cerrar',
-                style: TextStyle(color: Color.fromRGBO(239, 121, 42, 1)),
+                style:  TextStyle(color: Color.fromRGBO(239, 121, 42, 1)),
               ),
             ),
           ],

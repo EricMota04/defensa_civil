@@ -1,11 +1,55 @@
-import 'package:defensa_civil/presentation/widgets/AlberguesRows/Albergue.dart';
+import 'dart:convert';
+
+import 'package:defensa_civil/presentation/widgets/AlberguesRows/albergue_row.dart';
 import 'package:defensa_civil/presentation/widgets/AppBar/defensa_appbar.dart';
 import 'package:defensa_civil/presentation/widgets/drawers/albergues_drawer.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-
-class AlberguesScreen extends StatelessWidget {
+class AlberguesScreen extends StatefulWidget {
   const AlberguesScreen({super.key});
+
+  @override
+  State<AlberguesScreen> createState() => _AlberguesScreenState();
+}
+
+class _AlberguesScreenState extends State<AlberguesScreen> {
+  List<dynamic> alberguesList = [];
+  bool isLoading = false;
+  String errorMessage = '';
+
+  Future<void> getAlbergues() async {
+    setState(() {
+      isLoading = true;
+    });
+    final String apiURL = 'https://adamix.net/defensa_civil/def/albergues.php';
+    try {
+      final response = await http.get(Uri.parse(apiURL));
+      if (response.statusCode == 200) {
+        final jsonData = json.decode(response.body);
+        setState(() {
+          alberguesList = jsonData["datos"];
+          isLoading = false;
+        });
+      } else {
+        setState(() {
+          errorMessage = 'Error al obtener los datos: ${response.statusCode}';
+          isLoading = false;
+        });
+      }
+    } catch (e) {
+      setState(() {
+        errorMessage = 'Error al obtener los albergues: $e';
+        isLoading = false;
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getAlbergues();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,19 +72,22 @@ class AlberguesScreen extends StatelessWidget {
             SizedBox(
               height: 22,
             ),
-            Column(
-              //Aqui debajo van los albergues tomados de la api, posiblemente
-              // recorriendolo con un foreach
-              children: [
-                AlbergueRow(
-                    title: 'Polideportivo San Carlos',
-                    city: 'Distrito Nacional',
-                    phoneNumber: '(809) 308-3411'),
-                AlbergueRow(
-                    title: 'Prueba de nombre',
-                    city: 'Otra ciudad',
-                    phoneNumber: '(809) 555-3411')
-              ],
+            isLoading
+                ? CircularProgressIndicator()
+                : errorMessage.isNotEmpty
+                ? Text(errorMessage)
+                : Expanded(
+              child: ListView.builder(
+                itemCount: alberguesList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  final albergue = alberguesList[index];
+                  return AlbergueRow(
+                    title: albergue["edificio"],
+                    city: albergue["ciudad"],
+                    phoneNumber: albergue["telefono"],
+                  );
+                },
+              ),
             ),
           ],
         ),

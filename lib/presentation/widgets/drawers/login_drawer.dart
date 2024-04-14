@@ -12,18 +12,18 @@ class LoginDrawer extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 ListTile(
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.book,
-                    color: Color.fromRGBO(239, 121, 42, 1),
+                    color:  Color.fromRGBO(239, 121, 42, 1),
                     size: 24,
                   ),
-                  title: Text(
+                  title: const Text(
                     'Historia',
-                    style: TextStyle(
+                    style:  TextStyle(
                         color: Color.fromRGBO(15, 67, 116, 1),
                         fontWeight: FontWeight.w700,
                         fontSize: 24),
@@ -31,7 +31,7 @@ class LoginDrawer extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HistoryScreen()),
+                      MaterialPageRoute(builder: (context) => const HistoryScreen()),
                     );
                   },
                 ),
