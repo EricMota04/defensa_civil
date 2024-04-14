@@ -3,7 +3,6 @@ import '../presentation/widgets/About/About_slider.dart';
 import '../presentation/widgets/AppBar/defensa_appbar.dart';
 import '../presentation/widgets/Home/slide.dart';
 import 'package:flutter/material.dart';
-import '../presentation/widgets/drawers/home_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutScreen extends StatefulWidget {
@@ -21,7 +20,6 @@ class _AboutScreenState extends State<AboutScreen> {
 
     return Scaffold(
       appBar: DefensaAppBar(context: context),
-      drawer: HomeDrawer(),
       body: Center(
         child: Padding(
           padding: EdgeInsets.only(
