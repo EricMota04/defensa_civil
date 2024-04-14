@@ -1,8 +1,18 @@
 import 'package:defensa_civil/pages/albergues_screen.dart';
 import 'package:defensa_civil/pages/home_screen.dart';
 
+import 'package:defensa_civil/pages/register_screen.dart';
+import 'package:defensa_civil/pages/services_screen.dart';
 import 'package:defensa_civil/presentation/widgets/NavigationBar/DefensaNavigationBar.dart';
 
+import 'package:defensa_civil/pages/news.dart';
+import 'package:defensa_civil/pages/videos_screen.dart';
+
+import 'package:defensa_civil/pages/medidas_preventivas.dart';
+import 'package:defensa_civil/pages/members_screen.dart';
+import 'package:defensa_civil/pages/register_screen.dart';
+
+import 'package:defensa_civil/presentation/widgets/AppBar/defensa_appbar.dart';
 import 'package:defensa_civil/pages/login_screen.dart';
 
 import 'package:flutter/material.dart';
