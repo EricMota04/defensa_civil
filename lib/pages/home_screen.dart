@@ -14,17 +14,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _currentIndex = 0; // Set initial index to 0 (HomeScreen)
+
+  void _onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: DefensaAppBar(context: context),
       drawer: HomeDrawer(),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.only(
-              bottom: 50.0), // Additional space at the bottom
+          padding:
+              EdgeInsets.only(bottom: 50.0), // Additional space at the bottom
           child: CarouselSlider(
             options: CarouselOptions(
               height: MediaQuery.of(context).size.height * 0.70,
@@ -37,14 +43,18 @@ class _HomeScreenState extends State<HomeScreen> {
               viewportFraction: 0.8,
             ),
             items: [
-              slide(imagePath: 'assets/noticia1.jpeg', description: 'si',),
-              slide(imagePath: 'assets/noticia2.jpeg', description: 'si',),
+              slide(
+                imagePath: 'assets/noticia1.jpeg',
+                description: "",
+              ),
+              slide(
+                imagePath: 'assets/noticia2.jpeg',
+                description: "",
+              ),
             ],
           ),
-
         ),
       ),
-
     );
   }
 }
